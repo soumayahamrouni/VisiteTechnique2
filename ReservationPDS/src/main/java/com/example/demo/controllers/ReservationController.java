@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.ReservationRepository;
 import com.example.demo.entities.Reservation;
-@CrossOrigin(origins = { "http://localhost:4200" })
+
 @RestController
 @CrossOrigin(origins = { "http://localhost:4200" })
 public class ReservationController {
@@ -26,7 +26,7 @@ public class ReservationController {
 	}
 
 	@GetMapping("/reserv/{id}")
-	public List<Reservation> getByClient(@PathVariable("id") String d) {
+	public List<Reservation> getBycommande(@PathVariable("id") String d) {
 
 		List<Reservation> Lres = this.reservationrepo.findByClient(d);
 		return Lres;
