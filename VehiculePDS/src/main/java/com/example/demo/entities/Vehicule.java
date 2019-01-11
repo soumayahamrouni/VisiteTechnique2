@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Vehicule {
 	@Id
+	private String idVehicule;
 	private Long numChassis;
 	private String numCateGrise;
 	private String typeImm;
@@ -80,6 +81,13 @@ public class Vehicule {
 		this.modele = modele;
 		this.client = client;
 	}
+	public String getIdVehicule() {
+		return idVehicule;
+	}
+	public void setIdVehicule(String idVehicule) {
+		this.idVehicule = idVehicule;
+	}
+	
 	
 	
 	
