@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,16 +32,17 @@ public class VehiculeController {
 	}
 	
 	@RequestMapping("/getve")
-    public Vehicule getvehicule(Long numChassis)
+    public Vehicule getvehicule(String id)
     {
-		return vehiculerepository.findById(numChassis).orElse(null);
+		return vehiculerepository.findByIdVehicule(id);
 		
     }
+	@RequestMapping("/getByClient/{id}")
+	   public List<Vehicule> findByClient(@PathVariable("id") String client){
+			
+			return vehiculerepository.findByClient(client);
+		}
 	
-	@RequestMapping("/deleteve")
-   public void  delete(Long numChassis )
-   {
-		vehiculerepository.deleteById(numChassis);
-   }
+
 	
 }
