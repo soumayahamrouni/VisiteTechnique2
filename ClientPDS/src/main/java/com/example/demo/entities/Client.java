@@ -70,9 +70,9 @@ public List<Reservation> getReslist() {
 public void setReslist(List<Reservation> reslist) {
 	this.reslist = reslist;
 }
-public Client(String idClient, String firstName) {
+public Client(String IdClient, String firstName) {
 	super();
-	IdClient = idClient;
+	this.IdClient = IdClient;
 	this.firstName = firstName;
 }
 public List<Vehicule> getVehiculeslist() {
